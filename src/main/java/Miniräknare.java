@@ -21,6 +21,10 @@ public class Miniräknare {
         return Math.sqrt(x);
     }
 
+    public double subtraktion(double x, double y) {
+        return x - y;
+    }
+
     public String raknesatt(String raknesatt){
         switch (raknesatt){
             case "m":
