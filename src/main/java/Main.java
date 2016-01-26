@@ -6,13 +6,8 @@ public class Main {
     static Scanner scanner =  new Scanner(System.in);
 
     public static void main(String args[]){
-        while (1==1) {
-            System.out.println("Mata in räknesätt");
-            String raknesatt = scanner.nextLine();
-
-            System.out.println(miniräknare.raknesatt(raknesatt));
-
-            continue;
-        }
+        System.out.println("Mata in räknesätt");
+        String raknesatt = scanner.nextLine();
+        System.out.println(miniräknare.raknesatt(raknesatt));
     }
 }
