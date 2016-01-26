@@ -42,6 +42,7 @@ public class MiniräknareTest {
         assertEquals("Testar multiplikation", 100, miniräknare.multiplikation(a, b), 0);
         }
 
+    @Test
     public void testDivision() throws Exception {
         double a = 10;
         double b = 2;
