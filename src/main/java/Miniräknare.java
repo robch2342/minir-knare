@@ -1,4 +1,3 @@
-
 public class Miniräknare {
 
     public double addition(double x, double y) {
@@ -25,18 +24,32 @@ public class Miniräknare {
         return x - y;
     }
 
-    public String raknesatt(String raknesatt){
+    public double getSum(String raknesatt, double input1, double input2){
         switch (raknesatt){
             case "m":
-                return "multiplikation";
+                return multiplikation(input1, input2);
             case "s":
-                return "subtraktion";
+                return subtraktion(input1, input2);
             case "a":
-                return "addition";
+                return addition(input1, input2);
             case "d":
-                return "division";
+                return division(input1, input2);
         }
-        return "ogiltligt räknesätt";
+        return 0;
+    }
+
+    public boolean checkValidRaknesatt(String raknesatt) {
+        String[] validRaknesatt ={"m", "s", "a", "d"};
+
+        boolean contains = false;
+
+        for (String name : validRaknesatt) {
+             if (name.equals(raknesatt)){
+                 contains = true;
+                 break;
+             }
+        }
+        return contains;
     }
 
     public void avsluta(){

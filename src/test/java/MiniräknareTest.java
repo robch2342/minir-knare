@@ -10,7 +10,7 @@ public class MiniräknareTest {
 
     private Miniräknare miniräknare = new Miniräknare();
 
-    @Rule
+    @Rule // För att kunna testa Avsluta metoden
     public final ExpectedSystemExit exit = ExpectedSystemExit.none();
 
     @Before
@@ -72,25 +72,31 @@ public class MiniräknareTest {
     @Test
     public void testRaknesattMulti() throws Exception{
         String raknesatt = "m";
-        assertEquals("teststar räknesättet", "multiplikation", miniräknare.raknesatt(raknesatt));
+        assertEquals("teststar räknesättet", true, miniräknare.checkValidRaknesatt(raknesatt));
     }
 
     @Test
     public void testRaknesattSub() throws Exception{
         String raknesatt = "s";
-        assertEquals("teststar räknesättet", "subtraktion", miniräknare.raknesatt(raknesatt));
+        assertEquals("teststar räknesättet", true, miniräknare.checkValidRaknesatt(raknesatt));
     }
 
     @Test
     public void testRaknesattAdd() throws Exception{
         String raknesatt = "a";
-        assertEquals("teststar räknesättet", "addition", miniräknare.raknesatt(raknesatt));
+        assertEquals("teststar räknesättet", true, miniräknare.checkValidRaknesatt(raknesatt));
     }
 
     @Test
     public void testRaknesattDiv() throws Exception{
         String raknesatt = "d";
-        assertEquals("teststar räknesättet", "division", miniräknare.raknesatt(raknesatt));
+        assertEquals("testar räknesättet", true, miniräknare.checkValidRaknesatt(raknesatt));
+    }
+
+    @Test
+    public void testRaknesattFail() throws Exception{
+        String raknesatt = "något som inte finns";
+        assertEquals("testar om räknesättet finns", false, miniräknare.checkValidRaknesatt(raknesatt));
     }
 
     @Test
@@ -102,6 +108,42 @@ public class MiniräknareTest {
     @Test
     public void testNoAvsluta() throws Exception{
         //passes
+    }
+
+    @Test
+    public void testGetSumAdd() throws Exception{
+        String raknesatt = "a";
+        double input1 = 5;
+        double input2 = 5;
+
+        assertEquals("testar metoden getsum", 10, miniräknare.getSum(raknesatt, input1, input2), 0);
+    }
+
+    @Test
+    public void testGetSumMulti() throws Exception{
+        String raknesatt = "m";
+        double input1 = 4;
+        double input2 = 2;
+
+        assertEquals("testar getsum multiplikation", 8, miniräknare.getSum(raknesatt, input1, input2), 0);
+    }
+
+    @Test
+    public void testGetSumDiv() throws Exception{
+        String raknesatt = "d";
+        double input1 = 10;
+        double input2 = 2;
+
+        assertEquals("testar getsum division", 5, miniräknare.getSum(raknesatt,input1,input2), 0);
+    }
+
+    @Test
+    public void testGetSumSub() throws Exception{
+        String raknesatt = "s";
+        double input1 = 4;
+        double input2 = 2;
+
+        assertEquals("testar getsum subtraktion", 2, miniräknare.getSum(raknesatt,input1,input2), 0);
     }
 }
 
