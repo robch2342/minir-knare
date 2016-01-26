@@ -34,7 +34,6 @@ public class MiniräknareTest {
     }
 
     @Test
-
     public void testMultiplikation() throws Exception{
         double a = 10;
         double b = 10;
