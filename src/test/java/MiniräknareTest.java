@@ -32,4 +32,12 @@ public class MiniräknareTest {
 
         assertEquals("Testar pi", pi, miniräknare.pi(), 0);
     }
-}
+
+    @Test
+    public void testMultiplikation() throws Exception{
+        double a = 10;
+        double b = 10;
+
+        assertEquals("Testar multiplikation", 100, miniräknare.multiplikation(a, b), 0);
+        }
+    }
