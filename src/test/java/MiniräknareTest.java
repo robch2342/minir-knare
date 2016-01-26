@@ -49,11 +49,36 @@ public class MiniräknareTest {
 
         assertEquals("Testar division", 5, miniräknare.division(a, b), 0);
     }
+
     @Test
     public void testKvadratroten() throws Exception{
         double a = 25;
 
         assertEquals("Testar kvadratroten",5, miniräknare.kvadratroten(a),0);
+    }
+
+    @Test
+    public void testRaknesattMulti() throws Exception{
+        String raknesatt = "m";
+        assertEquals("teststar räknesättet", "multi", miniräknare.raknesatt(raknesatt));
+    }
+
+    @Test
+    public void testRaknesattSub() throws Exception{
+        String raknesatt = "s";
+        assertEquals("teststar räknesättet", "sub", miniräknare.raknesatt(raknesatt));
+    }
+
+    @Test
+    public void testRaknesattAdd() throws Exception{
+        String raknesatt = "a";
+        assertEquals("teststar räknesättet", "add", miniräknare.raknesatt(raknesatt));
+    }
+
+    @Test
+    public void testRaknesattDiv() throws Exception{
+        String raknesatt = "d";
+        assertEquals("teststar räknesättet", "div", miniräknare.raknesatt(raknesatt));
     }
 }
 
