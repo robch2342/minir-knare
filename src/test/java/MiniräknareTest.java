@@ -49,5 +49,11 @@ public class MiniräknareTest {
 
         assertEquals("Testar division", 5, miniräknare.division(a, b), 0);
     }
+    @Test
+    public void testKvadratroten() throws Exception{
+        double a = 25;
+
+        assertEquals("Testar kvadratroten",5, miniräknare.kvadratroten(a),0);
+    }
 }
 
