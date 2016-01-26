@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 public class MiniräknareTest {
 
-    Miniräknare miniräknare = new Miniräknare();
+    private Miniräknare miniräknare = new Miniräknare();
 
     @Before
     public void setUp() throws Exception {
@@ -24,5 +24,12 @@ public class MiniräknareTest {
         double b = 5;
 
         assertEquals("Testar addition", 10, miniräknare.addition(a, b),0);
+    }
+
+    @Test
+    public void testPi() throws Exception{
+        double pi = 3.1415;
+
+        assertEquals("Testar pi", pi, miniräknare.pi(), 0);
     }
 }
