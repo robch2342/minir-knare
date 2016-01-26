@@ -58,6 +58,14 @@ public class MiniräknareTest {
     }
 
     @Test
+    public void testSubtraktion() throws Exception {
+        double a = 7;
+        double b = 4;
+
+        assertEquals("Testar subtraktion", 3, miniräknare.subtraktion(a, b), 0);
+    }
+
+    @Test
     public void testRaknesattMulti() throws Exception{
         String raknesatt = "m";
         assertEquals("teststar räknesättet", "multi", miniräknare.raknesatt(raknesatt));
