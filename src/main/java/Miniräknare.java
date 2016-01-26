@@ -28,14 +28,18 @@ public class Miniräknare {
     public String raknesatt(String raknesatt){
         switch (raknesatt){
             case "m":
-                return "multi";
+                return "multiplikation";
             case "s":
-                return "sub";
+                return "subtraktion";
             case "a":
-                return "add";
+                return "addition";
             case "d":
-                return "div";
+                return "division";
         }
         return "ogiltligt räknesätt";
+    }
+
+    public void avsluta(){
+        System.exit(0);
     }
 }
