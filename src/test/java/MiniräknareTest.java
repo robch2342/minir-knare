@@ -1,12 +1,18 @@
+
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.contrib.java.lang.system.ExpectedSystemExit;
 
 import static org.junit.Assert.*;
 
 public class MiniräknareTest {
 
     private Miniräknare miniräknare = new Miniräknare();
+
+    @Rule
+    public final ExpectedSystemExit exit = ExpectedSystemExit.none();
 
     @Before
     public void setUp() throws Exception {
@@ -60,25 +66,40 @@ public class MiniräknareTest {
     @Test
     public void testRaknesattMulti() throws Exception{
         String raknesatt = "m";
-        assertEquals("teststar räknesättet", "multi", miniräknare.raknesatt(raknesatt));
+
+        assertEquals("teststar räknesättet", "multiplikation", miniräknare.raknesatt(raknesatt));
     }
 
     @Test
     public void testRaknesattSub() throws Exception{
         String raknesatt = "s";
-        assertEquals("teststar räknesättet", "sub", miniräknare.raknesatt(raknesatt));
+
+        assertEquals("teststar räknesättet", "subtraktion", miniräknare.raknesatt(raknesatt));
     }
 
     @Test
     public void testRaknesattAdd() throws Exception{
         String raknesatt = "a";
-        assertEquals("teststar räknesättet", "add", miniräknare.raknesatt(raknesatt));
+
+        assertEquals("teststar räknesättet", "addition", miniräknare.raknesatt(raknesatt));
     }
 
     @Test
     public void testRaknesattDiv() throws Exception{
         String raknesatt = "d";
-        assertEquals("teststar räknesättet", "div", miniräknare.raknesatt(raknesatt));
+
+        assertEquals("teststar räknesättet", "division", miniräknare.raknesatt(raknesatt));
+    }
+
+    @Test
+    public void testNoAvsluta(){
+        //passes
+    }
+
+    @Test
+    public void testAvsluta(){
+        exit.expectSystemExit();
+        miniräknare.avsluta();
     }
 }
 
