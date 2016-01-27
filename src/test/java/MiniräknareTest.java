@@ -54,6 +54,16 @@ public class MiniräknareTest {
         double d = 100000;
 
         assertEquals("Testar stora tal", 1000000000, miniräknare.multiplikation(c , d), 0);
+
+        double e = - 7;
+        double f = 8;
+
+        assertEquals("Testar att multiplicera med negativa tal", -56, miniräknare.multiplikation(e, f), 0);
+
+        double g = - 9;
+        double h = - 3;
+
+        assertEquals("Testar två negativa tal", 27, miniräknare.multiplikation(g, h), 0);
         }
 
     @Test
