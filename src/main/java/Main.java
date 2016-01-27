@@ -14,23 +14,14 @@ public class Main {
 
         String raknesatt = "";
 
-        while (!miniräknare.checkValidRaknesatt(raknesatt)) {
-            System.out.println("m = multiplikation");
-            System.out.println("s = subtraktion");
-            System.out.println("a = addition");
-            System.out.println("d = divition");
-            System.out.println("Mata in räknesätt");
-            raknesatt = scanner.nextLine();
-
-            if (raknesatt.equals("avsluta")) {
-                miniräknare.avsluta();
-            }
-        }
 
         while (parsedInput1 == 0) {
             System.out.println("Skriv in ett tal:");
             input1 = scanner.next();
             parsedInput1 = miniräknare.inputValidating(input1);
+        }
+
+        while (!miniräknare.checkValidRaknesatt(raknesatt)) {
         }
 
         while (parsedInput2 == 0) {

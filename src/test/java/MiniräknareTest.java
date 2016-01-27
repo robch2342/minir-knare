@@ -92,25 +92,25 @@ public class MiniräknareTest {
 
     @Test
     public void testValidRaknesattMulti() throws Exception{
-        String raknesatt = "m";
+        String raknesatt = "*";
         assertEquals("teststar räknesättet", true, miniräknare.checkValidRaknesatt(raknesatt));
     }
 
     @Test
     public void testValidRaknesattSub() throws Exception{
-        String raknesatt = "s";
+        String raknesatt = "-";
         assertEquals("teststar räknesättet", true, miniräknare.checkValidRaknesatt(raknesatt));
     }
 
     @Test
     public void testValidRaknesattAdd() throws Exception{
-        String raknesatt = "a";
+        String raknesatt = "+";
         assertEquals("teststar räknesättet", true, miniräknare.checkValidRaknesatt(raknesatt));
     }
 
     @Test
     public void testValidraknesattDiv() throws Exception{
-        String raknesatt = "d";
+        String raknesatt = "/";
         assertEquals("testar räknesättet", true, miniräknare.checkValidRaknesatt(raknesatt));
     }
 
@@ -133,7 +133,7 @@ public class MiniräknareTest {
 
     @Test
     public void testGetSumAdd() throws Exception{
-        String raknesatt = "a";
+        String raknesatt = "+";
         double input1 = 5;
         double input2 = 5;
 
@@ -142,7 +142,7 @@ public class MiniräknareTest {
 
     @Test
     public void testGetSumMulti() throws Exception{
-        String raknesatt = "m";
+        String raknesatt = "*";
         double input1 = 4;
         double input2 = 2;
 
@@ -151,7 +151,7 @@ public class MiniräknareTest {
 
     @Test
     public void testGetSumDiv() throws Exception{
-        String raknesatt = "d";
+        String raknesatt = "/";
         double input1 = 10;
         double input2 = 2;
 
@@ -160,7 +160,7 @@ public class MiniräknareTest {
 
     @Test
     public void testGetSumSub() throws Exception{
-        String raknesatt = "s";
+        String raknesatt = "-";
         double input1 = 4;
         double input2 = 2;
 

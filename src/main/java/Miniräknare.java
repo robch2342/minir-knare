@@ -25,21 +25,20 @@ public class Miniräknare {
     }
 
     public double getSum(String raknesatt, double input1, double input2){
-        switch (raknesatt){
-            case "m":
-                return multiplikation(input1, input2);
-            case "s":
-                return subtraktion(input1, input2);
-            case "a":
-                return addition(input1, input2);
-            case "d":
-                return division(input1, input2);
+        if (raknesatt.equals("*")) {
+            return multiplikation(input1, input2);
+        } else if (raknesatt.equals("-")) {
+            return subtraktion(input1, input2);
+        } else if (raknesatt.equals("+")) {
+            return addition(input1, input2);
+        } else if (raknesatt.equals("/")) {
+            return division(input1, input2);
         }
         return 0;
     }
 
     public boolean checkValidRaknesatt(String raknesatt) {
-        String[] validRaknesatt ={"m", "s", "a", "d"};
+        String[] validRaknesatt ={"*", "-", "+", "/"};
 
         boolean contains = false;
 
