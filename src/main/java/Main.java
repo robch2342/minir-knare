@@ -18,7 +18,7 @@ public class Main {
             System.out.println("m = multiplikation");
             System.out.println("s = subtraktion");
             System.out.println("a = addition");
-            System.out.println("d = divition");
+            System.out.println("d = division");
             System.out.println("Mata in räknesätt");
             raknesatt = scanner.nextLine();
 
@@ -34,7 +34,7 @@ public class Main {
         }
 
         while (parsedInput2 == 0) {
-            System.out.println("Skriv in de andra talet");
+            System.out.println("Skriv in det andra talet:");
             input2 = scanner.next();
             parsedInput2 = miniräknare.inputValidating(input2);
         }

@@ -44,6 +44,11 @@ public class MiniräknareTest {
         double b = 10;
 
         assertEquals("Testar multiplikation", 100, miniräknare.multiplikation(a, b), 0);
+
+        double n = 60;
+        double r = 0;
+
+        assertEquals("Testar multiplikation med 0", 0, miniräknare.multiplikation(n, r), 0);
         }
 
     @Test
