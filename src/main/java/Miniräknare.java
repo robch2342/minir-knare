@@ -44,15 +44,26 @@ public class Miniräknare {
         boolean contains = false;
 
         for (String name : validRaknesatt) {
-             if (name.equals(raknesatt)){
-                 contains = true;
-                 break;
-             }
+            if (name.equals(raknesatt)){
+                contains = true;
+                break;
+            }
         }
         return contains;
     }
 
     public void avsluta(){
         System.exit(0);
+    }
+
+    public double inputValidating(String input){
+        double parsedInput = 0;
+        try {
+            parsedInput = Double.parseDouble(input);
+
+        } catch (NumberFormatException e){
+            return parsedInput;
+        }
+        return parsedInput;
     }
 }

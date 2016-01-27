@@ -70,25 +70,25 @@ public class MiniräknareTest {
     }
 
     @Test
-    public void testRaknesattMulti() throws Exception{
+    public void testValidRaknesattMulti() throws Exception{
         String raknesatt = "m";
         assertEquals("teststar räknesättet", true, miniräknare.checkValidRaknesatt(raknesatt));
     }
 
     @Test
-    public void testRaknesattSub() throws Exception{
+    public void testValidRaknesattSub() throws Exception{
         String raknesatt = "s";
         assertEquals("teststar räknesättet", true, miniräknare.checkValidRaknesatt(raknesatt));
     }
 
     @Test
-    public void testRaknesattAdd() throws Exception{
+    public void testValidRaknesattAdd() throws Exception{
         String raknesatt = "a";
         assertEquals("teststar räknesättet", true, miniräknare.checkValidRaknesatt(raknesatt));
     }
 
     @Test
-    public void testRaknesattDiv() throws Exception{
+    public void testValidraknesattDiv() throws Exception{
         String raknesatt = "d";
         assertEquals("testar räknesättet", true, miniräknare.checkValidRaknesatt(raknesatt));
     }
@@ -144,6 +144,20 @@ public class MiniräknareTest {
         double input2 = 2;
 
         assertEquals("testar getsum subtraktion", 2, miniräknare.getSum(raknesatt,input1,input2), 0);
+    }
+
+    @Test
+    public void testInputValidator() throws Exception{
+        String input = "5";
+
+        assertEquals("testar inputvalidatorn", 5, miniräknare.inputValidating(input), 0);
+    }
+
+    @Test
+    public void testInputValidator2() throws Exception{
+        String input = "asdasd";
+
+        assertEquals("testar om den returnerar 0", 0, miniräknare.inputValidating(input), 0);
     }
 }
 
