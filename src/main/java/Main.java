@@ -15,6 +15,7 @@ public class Main {
         String raknesatt = "";
 
 
+
         while (parsedInput1 == 0) {
             System.out.println("Skriv in ett tal:");
             input1 = scanner.next();
@@ -22,6 +23,7 @@ public class Main {
         }
 
         while (!miniräknare.checkValidRaknesatt(raknesatt)) {
+            raknesatt = scanner.nextLine();
         }
 
         while (parsedInput2 == 0) {
