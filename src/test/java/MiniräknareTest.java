@@ -10,7 +10,7 @@ public class MiniräknareTest {
 
     private Miniräknare miniräknare = new Miniräknare();
 
-    @Rule // För att kunna testa Avsluta metoden
+    @Rule // För att kunna testa avsluta metoden
     public final ExpectedSystemExit exit = ExpectedSystemExit.none();
 
     @Before

@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class Main {
 
-    static Miniräknare miniräknare = new Miniräknare();
-    static Scanner scanner =  new Scanner(System.in);
+    private static Miniräknare miniräknare = new Miniräknare();
+    private static Scanner scanner =  new Scanner(System.in);
 
     public static void main(String args[]){
 
@@ -25,22 +25,22 @@ public class Main {
             }
         }
         do {
-            System.out.println("Skriv in ett positivt nummer:");
+            System.out.println("Skriv in ett tal:");
             while (!scanner.hasNextDouble()){
-                System.out.println("De där är inget nummer, var god att skriv ett nummer.");
+                System.out.println("De där är inget tal, var god att skriv ett tal.");
                 scanner.next();
             }
             input1 = scanner.nextDouble();
-        } while (input1 <= 0);
+        } while (input1 == 0);
 
         do {
-            System.out.println("Skriv in de andra nummret");
+            System.out.println("Skriv in de andra talet");
             while (!scanner.hasNextDouble()){
-                System.out.println("De där är inget nummer, var god att skriv ett nummer.");
+                System.out.println("De där är inget tal, var god att skriv ett tal.");
                 scanner.next();
             }
             input2 = scanner.nextDouble();
-        } while (input2 <= 0);
+        } while (input2 == 0);
 
         System.out.println("Resultat: " + miniräknare.getSum(raknesatt, input1, input2));
     }
