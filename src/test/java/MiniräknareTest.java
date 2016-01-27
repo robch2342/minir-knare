@@ -88,6 +88,11 @@ public class MiniräknareTest {
         double d = 8;
 
         assertEquals("Testar att se om minustal fungerar", -4, miniräknare.subtraktion(c, d),0);
+
+        double e = - 5;
+        double f = - 7;
+
+        assertEquals("Testar negativa tal", 2, miniräknare.subtraktion(e,f), 0);
     }
 
     @Test
