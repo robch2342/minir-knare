@@ -55,6 +55,12 @@ public class Miniräknare {
         System.exit(0);
     }
 
+    public void checkAvsluta(String input){
+        if (input.equals("x") || input.equals("avsluta")){
+            avsluta();
+        }
+    }
+
     public double inputValidating(String input){
         double parsedInput = 0;
         try {

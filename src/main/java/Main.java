@@ -14,22 +14,23 @@ public class Main {
 
         String raknesatt = "";
 
-
-
         while (parsedInput1 == 0) {
             System.out.println("Skriv in ett tal:");
             input1 = scanner.next();
             parsedInput1 = miniräknare.inputValidating(input1);
+            miniräknare.checkAvsluta(input1);
         }
 
         while (!miniräknare.checkValidRaknesatt(raknesatt)) {
             raknesatt = scanner.nextLine();
+            miniräknare.checkAvsluta(raknesatt);
         }
 
         while (parsedInput2 == 0) {
             System.out.println("Skriv in de andra talet");
             input2 = scanner.next();
             parsedInput2 = miniräknare.inputValidating(input2);
+            miniräknare.checkAvsluta(input2);
         }
         System.out.println("Resultat: " + miniräknare.getSum(raknesatt, parsedInput1, parsedInput2));
     }
