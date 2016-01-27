@@ -1,4 +1,40 @@
+import java.util.Scanner;
+
 public class Miniräknare {
+
+    private static Scanner scanner = new Scanner(System.in);
+
+    public void miniräknare(){
+
+        String input1 = "";
+        String input2 = "";
+        double parsedInput1 = 0;
+        double parsedInput2 = 0;
+
+        String raknesatt = "";
+
+        while (parsedInput1 == 0) {
+            System.out.println("Skriv in ett tal:");
+            input1 = scanner.next();
+            parsedInput1 = inputValidating(input1);
+            checkAvsluta(input1);
+        }
+
+        System.out.println("Ange räknesätt");
+
+        while (!checkValidRaknesatt(raknesatt)) {
+            raknesatt = scanner.nextLine();
+            checkAvsluta(raknesatt);
+        }
+
+        while (parsedInput2 == 0) {
+            System.out.println("Skriv in de andra talet");
+            input2 = scanner.next();
+            parsedInput2 = inputValidating(input2);
+            checkAvsluta(input2);
+        }
+        System.out.println("Resultat: " + getSum(raknesatt, parsedInput1, parsedInput2));
+    }
 
     public double addition(double x, double y) {
         return x + y;
@@ -55,10 +91,13 @@ public class Miniräknare {
         System.exit(0);
     }
 
-    public void checkAvsluta(String input){
+    public boolean checkAvsluta(String input){
+
         if (input.equals("x") || input.equals("avsluta")){
             avsluta();
+            return false;
         }
+        return true;
     }
 
     public double inputValidating(String input){
