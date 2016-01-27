@@ -34,6 +34,17 @@ public class MiniräknareTest {
         double d = 0;
 
         assertEquals("Testar addition", 0, miniräknare.addition(c, d),0);
+
+
+        double e = - 8;
+        double f = - 6;
+
+        assertEquals("Testar att addera negativa tal", -14, miniräknare.addition(e, f), 0);
+
+        double g = - 10;
+        double h = 100;
+
+        assertEquals("Testar negativ och positiva ta", 90, miniräknare.addition(g, h),0);
     }
 
     @Test
@@ -54,6 +65,16 @@ public class MiniräknareTest {
         double d = 100000;
 
         assertEquals("Testar stora tal", 1000000000, miniräknare.multiplikation(c , d), 0);
+
+        double e = - 7;
+        double f = 8;
+
+        assertEquals("Testar att multiplicera med negativa tal", -56, miniräknare.multiplikation(e, f), 0);
+
+        double g = - 9;
+        double h = - 3;
+
+        assertEquals("Testar två negativa tal", 27, miniräknare.multiplikation(g, h), 0);
         }
 
     @Test
