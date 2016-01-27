@@ -29,6 +29,11 @@ public class MiniräknareTest {
         double b = 5;
 
         assertEquals("Testar addition", 10, miniräknare.addition(a, b), 0);
+
+        double c = 0;
+        double d = 0;
+
+        assertEquals("Testar addition", 0, miniräknare.addition(c, d),0);
     }
 
     @Test
@@ -44,6 +49,11 @@ public class MiniräknareTest {
         double b = 10;
 
         assertEquals("Testar multiplikation", 100, miniräknare.multiplikation(a, b), 0);
+
+        double c = 10000;
+        double d = 100000;
+
+        assertEquals("Testar stora tal", 1000000000, miniräknare.multiplikation(c , d), 0);
         }
 
     @Test
@@ -52,6 +62,11 @@ public class MiniräknareTest {
         double b = 2;
 
         assertEquals("Testar division", 5, miniräknare.division(a, b), 0);
+
+        double c = 2;
+        double d = 14;
+
+        assertEquals("Testar att dela ett mindre tal i ett större", 0.14, miniräknare.division(c , d), 1);
     }
 
     @Test
@@ -67,6 +82,12 @@ public class MiniräknareTest {
         double b = 4;
 
         assertEquals("Testar subtraktion", 3, miniräknare.subtraktion(a, b), 0);
+
+
+        double c = 4;
+        double d = 8;
+
+        assertEquals("Testar att se om minustal fungerar", -4, miniräknare.subtraktion(c, d),0);
     }
 
     @Test
