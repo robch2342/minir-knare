@@ -153,11 +153,6 @@ public class MiniräknareTest {
     }
 
     @Test
-    public void testNoAvsluta() throws Exception{
-        //passes
-    }
-
-    @Test
     public void testGetSumAdd() throws Exception{
         String raknesatt = "+";
         double input1 = 5;
@@ -195,16 +190,28 @@ public class MiniräknareTest {
 
     @Test
     public void testInputValidator() throws Exception{
-        String input = "5";
+        String input1 = "5";
+        assertEquals("testar inputvalidatorn", 5, miniräknare.inputValidating(input1), 0);
 
-        assertEquals("testar inputvalidatorn", 5, miniräknare.inputValidating(input), 0);
+        String input2 = "asdasd";
+        assertEquals("testar om den returnerar 0", 0, miniräknare.inputValidating(input2), 0);
     }
 
     @Test
-    public void testInputValidator2() throws Exception{
-        String input = "asdasd";
+    public void testCheckAvsluta() throws Exception{
+        String input1 = "x";
+        String input2 = "avsluta";
+        String input3 = "tiotusen";
 
-        assertEquals("testar om den returnerar 0", 0, miniräknare.inputValidating(input), 0);
+        exit.expectSystemExit();
+        miniräknare.checkAvsluta(input1);
+
+        exit.expectSystemExit();
+        miniräknare.checkAvsluta(input2);
+
+        assertEquals("ska inte inte avsluta", false, miniräknare.checkAvsluta(input3));
+
     }
+
 }
 

@@ -6,8 +6,8 @@ public class Miniräknare {
 
     public void miniräknare(){
 
-        String input1 = "";
-        String input2 = "";
+        String input1;
+        String input2;
         double parsedInput1 = 0;
         double parsedInput2 = 0;
 
@@ -95,9 +95,9 @@ public class Miniräknare {
 
         if (input.equals("x") || input.equals("avsluta")){
             avsluta();
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     public double inputValidating(String input){
