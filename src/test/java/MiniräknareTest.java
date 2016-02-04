@@ -87,7 +87,7 @@ public class MiniräknareTest {
         double c = 2;
         double d = 14;
 
-        assertEquals("Testar att dela ett mindre tal i ett större", 0.14, miniräknare.division(c , d), 1);
+        assertEquals("Testar att dela ett mindre tal i ett större", 0.14, miniräknare.division(c, d), 1);
     }
 
     @Test
@@ -113,7 +113,7 @@ public class MiniräknareTest {
         double e = - 5;
         double f = - 7;
 
-        assertEquals("Testar negativa tal", 2, miniräknare.subtraktion(e,f), 0);
+        assertEquals("Testar negativa tal", 2, miniräknare.subtraktion(e, f), 0);
     }
 
     @Test
@@ -192,9 +192,15 @@ public class MiniräknareTest {
     public void testInputValidator() throws Exception{
         String input1 = "5";
         assertEquals("testar inputvalidatorn", 5, miniräknare.inputValidating(input1), 0);
+        assertEquals(miniräknare.pi(), miniräknare.inputValidating("pi", 10), 0);
+        assertEquals(miniräknare.pi(), miniräknare.inputValidating("pI"), 0);
+        assertEquals(miniräknare.pi(), miniräknare.inputValidating("PI"), 0);
+        assertEquals(-miniräknare.pi(), miniräknare.inputValidating("-Pi"), 0);
+    }
 
-        String input2 = "asdasd";
-        assertEquals("testar om den returnerar 0", 0, miniräknare.inputValidating(input2), 0);
+    @Test(expected = Exception.class)
+    public void testInputValidatorException() throws Exception {
+        miniräknare.inputValidating("asfds");
     }
 
     @Test
@@ -211,6 +217,24 @@ public class MiniräknareTest {
 
         assertEquals("ska inte inte avsluta", false, miniräknare.checkAvsluta(input3));
 
+    }
+
+    @Test
+    public void testParseString() {
+        assertEquals("7", miniräknare.parseString("1 +  6.0"));
+        assertEquals("9.7", miniräknare.parseString(" 15-5.3   "));
+        assertEquals("-50", miniräknare.parseString("   -  5.0* 10"));
+        assertEquals("-9", miniräknare.parseString("27/-3 "));
+        assertEquals("Syntax error", miniräknare.parseString("sgs"));
+        assertEquals("Syntax error", miniräknare.parseString("1+"));
+        assertEquals("Syntax error", miniräknare.parseString("5*35-"));
+        assertEquals("Syntax error", miniräknare.parseString("345/3g36"));
+        assertEquals("Syntax error", miniräknare.parseString("sgs-45"));
+        assertEquals("678", miniräknare.parseString("678"));
+        assertEquals("-678", miniräknare.parseString("-678.000"));
+        assertEquals("Syntax error", miniräknare.parseString("56sqrt89"));
+        assertEquals("4.1415", miniräknare.parseString("1 +pi"));
+        assertEquals("-2.1415", miniräknare.parseString("-pi+1"));
     }
 
 }
