@@ -4,19 +4,32 @@ public class Miniräknare {
 
     private static Scanner scanner = new Scanner(System.in);
 
+    public String getName() {
+        return "Miniräknarn";
+    }
+
+    public String getVersion() {
+        return "0.8";
+    }
+
+    public void printHelp() {
+        System.out.println("Funktioner:");
+        System.out.println("+, -, *, /, pi och sqrt\n");
+        System.out.println("Exempel:");
+        System.out.println("pi [ENTER] sqrt [ENTER]");
+        System.out.println("4 [ENTER] + [ENTER] 20 [ENTER]\n");
+    }
     public void miniräknare() {
 
         double input1;
         double input2;
-
-        String raknesatt = "";
 
         System.out.println("Skriv in ett tal:");
         input1 = readDouble();
 
         System.out.println("Ange räknesätt:");
 
-        raknesatt = readRaknesatt();
+        String raknesatt = readRaknesatt();
 
         double result = 0;
 
@@ -28,7 +41,7 @@ public class Miniräknare {
             result = getSum(raknesatt, input1, input2);
         }
 
-        System.out.println("Resultat: " + result);
+        System.out.println("Resultat: " + inputValidating("" + result));
 
     }
 
@@ -64,7 +77,7 @@ public class Miniräknare {
     }
 
     public double pi() {
-        return 3.1415;
+        return Math.PI;
     }
 
     public double multiplikation(double x, double y) {
@@ -115,8 +128,8 @@ public class Miniräknare {
                 try {
                     result = inputValidating("" + getSum(
                             input.charAt(i) + "",
-                            inputValidating(input.substring(0, i), 10),
-                            inputValidating(input.substring(i + 1, input.length()), 10)
+                            inputValidating(input.substring(0, i), 12),
+                            inputValidating(input.substring(i + 1, input.length()), 12)
                     ));
                     foundOperator = true;
                 } catch (Exception e) {
@@ -157,7 +170,7 @@ public class Miniräknare {
     }
 
     public double inputValidating(String input) {
-        return inputValidating(input, 8);
+        return inputValidating(input, 10);
     }
 
     public double inputValidating(String input, int decimals){

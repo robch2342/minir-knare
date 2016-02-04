@@ -49,7 +49,7 @@ public class MiniräknareTest {
 
     @Test
     public void testPi() throws Exception {
-        double pi = 3.1415;
+        double pi = Math.PI;
 
         assertEquals("Testar pi", pi, miniräknare.pi(), 0);
     }
@@ -192,10 +192,10 @@ public class MiniräknareTest {
     public void testInputValidator() throws Exception{
         String input1 = "5";
         assertEquals("testar inputvalidatorn", 5, miniräknare.inputValidating(input1), 0);
-        assertEquals(miniräknare.pi(), miniräknare.inputValidating("pi", 10), 0);
-        assertEquals(miniräknare.pi(), miniräknare.inputValidating("pI"), 0);
-        assertEquals(miniräknare.pi(), miniräknare.inputValidating("PI"), 0);
-        assertEquals(-miniräknare.pi(), miniräknare.inputValidating("-Pi"), 0);
+        assertEquals(3.14159265, miniräknare.inputValidating("pi", 9), 0);
+        assertEquals(3.141592654, miniräknare.inputValidating("pI"), 0);
+        assertEquals(3.14159265359, miniräknare.inputValidating("PI", 12), 0);
+        assertEquals(-3.141592654, miniräknare.inputValidating("-Pi"), 0);
     }
 
     @Test(expected = Exception.class)
@@ -233,8 +233,8 @@ public class MiniräknareTest {
         assertEquals("678", miniräknare.parseString("678"));
         assertEquals("-678", miniräknare.parseString("-678.000"));
         assertEquals("Syntax error", miniräknare.parseString("56sqrt89"));
-        assertEquals("4.1415", miniräknare.parseString("1 +pi"));
-        assertEquals("-2.1415", miniräknare.parseString("-pi+1"));
+        assertEquals("4.141592654", miniräknare.parseString("1 +pi"));
+        assertEquals("-2.141592654", miniräknare.parseString("-pi+1"));
     }
 
 }
