@@ -1,12 +1,12 @@
 public class Main {
 
-    private static Miniräknare miniräknare = new Miniräknare();
+    private static Miniraknare miniraknare = new Miniraknare();
 
     public static void main(String args[]) {
-        System.out.println(miniräknare.getName() + " " + miniräknare.getVersion() + "\n");
-        miniräknare.printHelp();
+        System.out.println(miniraknare.getName() + " " + miniraknare.getVersion() + "\n");
+        miniraknare.printHelp();
         while(true){
-            miniräknare.miniräknare();
+            miniraknare.miniraknare();
         }
     }
 }

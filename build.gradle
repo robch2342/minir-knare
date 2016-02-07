@@ -1,4 +1,4 @@
-group 'miniräknare'
+group 'miniraknare'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
